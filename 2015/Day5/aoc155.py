@@ -7,10 +7,10 @@ f.close
 strings = File.split('\n')
 
 nice = 0							# Nice strings
-vowels = ['a','e','i','o','u']		# Vowels
-notallow = ['ab','cd','pq','xy']	# String pathen that is not allowed
+vowels = ['a','e','i','o','u']					# Vowels
+notallow = ['ab','cd','pq','xy']				# String pathen that is not allowed
 
-def three(string):					# Checks if there are atleast three vowels in string
+def three(string):						# Checks if there are atleast three vowels in string
 	for j in range(len(string)):
 		char = string[j]
 		if char in vowels:
@@ -20,14 +20,14 @@ def three(string):					# Checks if there are atleast three vowels in string
 		return True
 	return False
 
-def double(string):					# Checks if string contains at least one letter that appears twice in a row
+def double(string):						# Checks if string contains at least one letter that appears twice in a row
 	for i in range(len(string)-1):
 		if(string[i] == string[i+1]):
 			return True
 			break
 	return False
 
-def prohibit(string):				# Checks if prohibit strings are in string
+def prohibit(string):						# Checks if prohibit strings are in string
 	for j in range(len(string)-1):
 		char = string[j]+string[j+1]
 		if char in notallow:
@@ -52,7 +52,7 @@ print('The answer to Part One is','\u0332'.join(str(nice)),'.')
 --Part Two--
 '''
 
-def pair(string):					# Checks if string contains a pair of any two letters that appears at least twice
+def pair(string):						# Checks if string contains a pair of any two letters that appears at least twice
 	for i in range(len(string)-1):
 		j = i + 1
 		try:
@@ -65,7 +65,7 @@ def pair(string):					# Checks if string contains a pair of any two letters that
 			print(end='')
 	return False
 
-def iji(string):					# Checks if string contains at least one letter which repeats with exactly one letter between them
+def iji(string):						# Checks if string contains at least one letter which repeats with exactly one letter between them
 	for i in range(len(string)-2):
 		try:
 			if(string[i] == string[i+2]):
