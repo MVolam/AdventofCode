@@ -1,33 +1,34 @@
 print('aoc154.py')
 import hashlib
 
+#	puzzle input
 st = 'bgvyzdsv'
 x = int(0)
 Str = st + str(x)
 # then sending to md5()
 result = hashlib.md5(Str.encode())
-first5 = (result.hexdigest())[:5]
-while(first5 != '00000'):
+#	translates from hex to decimal
+zeros = (result.hexdigest())[:5]
+#	goes trough each input until the value of zeros is '00000'
+while(zeros != '00000'):
+	# next increment
 	x = x+1
 	Str = st + str(x)
 	result = hashlib.md5(Str.encode())
-	first5 = (result.hexdigest())[:5]
-#	print(Str,' \t ',first5)
+	zeros = (result.hexdigest())[:5]
 
+#	the awnser of part 1
 print(x)
-print(Str,' \t ',first5)
+print(Str,' \t ',zeros)
 
-while(first5 != '000000'):
+#	goes trough each input until the value of zeros is '000000'
+while(zeros != '000000'):
+	# next increment
 	x = x+1
 	Str = st + str(x)
 	result = hashlib.md5(Str.encode())
-	first5 = (result.hexdigest())[:6]
-#	print(Str,' \t ',first5)
+	zeros = (result.hexdigest())[:6]
 
 print(x)
-print(Str,' \t ',first5)
-
-
-
-
+print(Str,' \t ',zeros)
 
